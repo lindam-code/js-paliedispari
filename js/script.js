@@ -9,19 +9,15 @@ function controlloParolaPalindroma(parolaDaControllare) {
 
   var arrayParolaUtente = parolaDaControllare.split('');
   console.log(arrayParolaUtente);
-  // var arrayParolaUtenteReverse = arrayParolaUtente.reverse();
-  // console.log(arrayParolaUtenteReverse);
-  // var stringaParolaUtenteReverse = arrayParolaUtenteReverse.toString();
-  // console.log(stringaParolaUtenteReverse);
 
   // se è vero cambio parolaPalindroma
-  var parolaPalindroma = 'la parola NON è palidroma';
-  for (var i = 0; i < arrayParolaUtente.length; i++) {
-    if (arrayParolaUtente[i] == arrayParolaUtente.reverse()[i]) {
-      console.log(arrayParolaUtente[i] + ' - ' + arrayParolaUtente.reverse()[i]);
-      parolaPalindroma = 'la parola è palidroma';
-    }
+  var parolaPalindroma = true;
+  var i = 0
+  while ((arrayParolaUtente[i] == arrayParolaUtente.reverse()[i]) && i < arrayParolaUtente.length) {
+    console.log(arrayParolaUtente[i] + ' - ' + arrayParolaUtente.reverse()[i]);
+    i++;
   }
+
   console.log(parolaPalindroma);
   // return parolaPalindroma;
 }
