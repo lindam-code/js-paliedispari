@@ -68,3 +68,47 @@
 //     return false;
 //   }
 // }
+
+
+// GIOCO PARI O DISPARI
+// L’utente sceglie pari o dispari e un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer.
+// Sommiamo i due numeri e dichiariamo chi ha vinto.
+
+// Informazioni dall'utente
+var numeroUtente = parseInt(prompt('Scrivi un numero da 1 a 5'));
+var scommessaUtente = prompt('Scegli se pari o dispari e scrivi qui.');
+console.log(numeroUtente);
+// console.log(scommessaUtente);
+
+// Genero numero del PC
+function generatoreRandom() {
+  numeroRandom = Math.floor(Math.random()*5 + 1);
+  return numeroRandom;
+}
+numeroPC = generatoreRandom();
+console.log(numeroPC);
+
+// Controllo se la somma dei due numeri è pari o dispari
+// Necessita dei due numeri: utente e PC.
+// Restituisce pari o dispari
+function sommaPariDispari(num1,num2) {
+  somma = num1 + num2;
+  risultato = '';
+  if (somma % 2 == 0) {
+    risultato = 'pari';
+  } else {
+    risultato = 'dispari';
+  }
+  return risultato;
+}
+
+risultatoSomma = sommaPariDispari(numeroUtente,numeroPC);
+console.log(risultatoSomma);
+
+// Dichiarazione del vincitore
+var messaggio = 'Ha perso!!';
+if (scommessaUtente == risultatoSomma) {
+  messaggio = 'Complimenti hai vinto!'
+}
+alert(messaggio);
